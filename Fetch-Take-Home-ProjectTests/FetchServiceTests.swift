@@ -1,13 +1,13 @@
 //
-//  Fetch_Take_Home_ProjectTests.swift
+//  FetchServiceTests.swift
 //  Fetch-Take-Home-ProjectTests
 //
-//  Created by Dmitry Matveichev on 8/16/24.
+//  Created by Dmitry Matveichev on 8/20/24.
 //
 
 import XCTest
 
-final class Fetch_Take_Home_ProjectTests: XCTestCase {
+final class FetchServiceTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -27,7 +27,7 @@ final class Fetch_Take_Home_ProjectTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        measure {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }
