@@ -14,8 +14,8 @@ Fetch Data:
 - MockFetchService (used to mock FetchService for preview generation)
 
 Objects:
-- MealListItem (struct) - used for presenting List Items
-- Meal (struct) - used to present Meal Details
+- MealListItem (struct) - used for presenting List Items and map from JSON
+- Meal (struct) - used to present Meal Details and map from JSON
 
 Protocols:
 - FetchServiceProtocol - used to define protocol for FetchService

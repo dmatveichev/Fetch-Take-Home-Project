@@ -57,7 +57,6 @@ struct MealDetailView: View {
                         Link(destination: url, label: {
                             Text("Watch Video")
                                 .frame(width: 250, height: 50)
-                                .bold()
                                 .font(.title2)
                                 .background(Color.red)
                                 .foregroundColor(.white)
