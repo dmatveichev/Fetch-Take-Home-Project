@@ -11,7 +11,8 @@ import SwiftUI
 struct Fetch_Take_Home_ProjectApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let fetchService = FetchService()
+            MealsListView(fetchService: fetchService)
         }
     }
 }

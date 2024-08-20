@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MealsListView: View {
-    @State private var meals: [RecipeListItem] = []
+    @State private var meals: [MealListItem] = []
     @State private var isLoading = true
     @State private var errorMessage: String?
     @State private var showAlert = false
@@ -21,19 +21,12 @@ struct MealsListView: View {
                 ProgressView("Loading...")
             } else {
                 List(meals, id: \.id) { meal in
-                    HStack {
-                        CachedAsyncImage(
-                            url: URL(string: meal.imageUrl ?? ""),
-                            placeholder: Image("NoImageAvailable")
-                        )
-                        .frame(height: 60)
-                        .cornerRadius(4)
-                        Text(meal.name)
-                            .fontWeight(.regular)
-                            .lineLimit(2)
+                    NavigationLink(destination: MealDetailView(fetchService: fetchService,
+                                                                     mealId: meal.id)) {
+                        MealListViewCell(meal: meal)
                     }
                 }
-                .navigationTitle("Desserts")
+                .navigationTitle("Meals List")
             }
         }
         .alert("Error", isPresented: $showAlert) {
@@ -43,14 +36,14 @@ struct MealsListView: View {
         }
         .onAppear(perform: {
             Task {
-                await fetchDesserts()
+                await fetchMeals()
             }
         })
     }
     
-    private func fetchDesserts() async {
+    private func fetchMeals() async {
         do {
-            let response = try await fetchService.fetchDesserts()
+            let response = try await fetchService.fetchMeals()
             meals = response.meals
             isLoading = false
             showAlert = false

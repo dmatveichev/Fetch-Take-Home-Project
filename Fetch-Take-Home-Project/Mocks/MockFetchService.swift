@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+class MockFetchService: FetchServiceProtocol {
+    func fetchMeals() async throws -> MealsListResponse {
+        return MealsListResponse(meals: [])
+    }
+    
+    func fetchMealDetails(with id: String) async throws -> MealResponse {
+        return MealResponse(meals: [Meal.preview])
+    }
+}

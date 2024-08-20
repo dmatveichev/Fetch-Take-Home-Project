@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct MealListViewCell: View {
+    var meal: MealListItem
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            CachedAsyncImage(
+                url: URL(string: meal.imageUrl ?? ""),
+                placeholder: Image("NoImageAvailable")
+            )
+            .frame(height: 60)
+            .cornerRadius(4)
+            Text(meal.name)
+                .fontWeight(.regular)
+                .lineLimit(2)
+        }
     }
-}
-
-#Preview {
-    MealListViewCell()
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MealListItem: Codable, Equatable {
+struct MealListItem: Codable {
     let id: String
     let name: String
     let imageUrl: String?
@@ -19,6 +19,6 @@ struct MealListItem: Codable, Equatable {
     }
 }
 
-struct RecipeListResponse: Codable {
+struct MealsListResponse: Codable {
     let meals: [MealListItem]
 }
