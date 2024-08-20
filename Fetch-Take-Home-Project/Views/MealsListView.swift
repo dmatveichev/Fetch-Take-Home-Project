@@ -60,6 +60,6 @@ struct MealsListView: View {
 }
 
 #Preview {
-    let fetchService = FetchService()
+    let fetchService = MockFetchService()
     return MealsListView(fetchService: fetchService)
 }

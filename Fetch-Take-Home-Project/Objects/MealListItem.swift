@@ -22,3 +22,14 @@ struct MealListItem: Codable {
 struct MealsListResponse: Codable {
     let meals: [MealListItem]
 }
+
+extension MealListItem {
+    static var previewItems: [MealListItem] {
+        return [MealListItem(id: "52891", name: "Blackberry Fool", imageUrl: "https://www.themealdb.com/images/media/meals/rpvptu1511641092.jpg"),
+                MealListItem(id: "52788", name: "Christmas Pudding Flapjack", imageUrl: "https://www.themealdb.com/images/media/meals/vvusxs1483907034.jpg"),
+                MealListItem(id: "52891", name: "Blackberry Fool", imageUrl: "https://www.themealdb.com/images/media/meals/rpvptu1511641092.jpg"),
+                MealListItem(id: "52788", name: "Christmas Pudding Flapjack", imageUrl: "https://www.themealdb.com/images/media/meals/vvusxs1483907034.jpg"),
+                MealListItem(id: "52891", name: "Blackberry Fool", imageUrl: "https://www.themealdb.com/images/media/meals/rpvptu1511641092.jpg"),
+                MealListItem(id: "52788", name: "Christmas Pudding Flapjack", imageUrl: "https://www.themealdb.com/images/media/meals/vvusxs1483907034.jpg")]
+    }
+}

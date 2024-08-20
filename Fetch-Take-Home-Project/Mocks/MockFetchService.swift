@@ -9,7 +9,7 @@ import Foundation
 
 class MockFetchService: FetchServiceProtocol {
     func fetchMeals() async throws -> MealsListResponse {
-        return MealsListResponse(meals: [])
+        return MealsListResponse(meals: MealListItem.previewItems)
     }
     
     func fetchMealDetails(with id: String) async throws -> MealResponse {
