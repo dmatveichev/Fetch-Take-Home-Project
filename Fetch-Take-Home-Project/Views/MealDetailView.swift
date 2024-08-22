@@ -67,6 +67,11 @@ struct MealDetailView: View {
             }
             .padding(.horizontal)
         }
+        .alert("Error", isPresented: $showAlert) {
+            Button("OK", role: .cancel) { }
+        } message: {
+            Text(errorMessage ?? "Unknown error")
+        }
         .onAppear(perform: {
             Task {
                 await fetchMeal(with: mealId)
